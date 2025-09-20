@@ -1,0 +1,7 @@
+{
+  "name": "jips/agenda-kuliah",
+  "description": "Aplikasi agenda digital mahasiswa sederhana dengan PHP",
+  "require": {
+    "php": "^8.0"
+  }
+}
