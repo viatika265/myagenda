@@ -1,7 +1,7 @@
 <?php
 // ========== CONFIG ==========
 $dataFile = "data.json";
-
+ 
 // Kalau file JSON belum ada, bikin kosong default
 if (!file_exists($dataFile)) {
     file_put_contents($dataFile, json_encode(["jadwal" => [], "tugas" => []], JSON_PRETTY_PRINT));
@@ -83,13 +83,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Agenda Mahasiswa</title>
     <style>
-        body { font-family: Arial; margin: 20px; background: #f5f5f5; }
-        h1 { color: #333; }
-        .card { background: #fff; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
-        ul { margin: 0; padding: 0; list-style: none; }
-        li { padding: 5px 0; }
-        form { margin-top: 10px; }
-        input, button { margin: 5px 0; padding: 5px; }
+        body { 
+            font-family: Arial; 
+            margin: 20px; 
+            background: #e6f2f7; /* biru muda background */
+        }
+        h1 { 
+            color: #004080; /* biru tua judul */
+        }
+        .card { 
+            background: #ffffff; 
+            padding: 15px; 
+            margin-bottom: 20px; 
+            border-radius: 8px; 
+            border-left: 6px solid #3399cc; /* aksen biru laut */
+            box-shadow: 0 2px 6px rgba(0,0,0,.1); 
+        }
+        h2 { 
+            color: #006699; /* judul card biru laut */
+        }
+        ul { 
+            margin: 0; 
+            padding: 0; 
+            list-style: none; 
+        }
+        li { 
+            padding: 6px 0; 
+            border-bottom: 1px solid #cce6f0; 
+        }
+        li:last-child { 
+            border-bottom: none; 
+        }
+        form { 
+            margin-top: 10px; 
+        }
+        input, button { 
+            margin: 5px 0; 
+            padding: 8px; 
+            border: 1px solid #99ccff; 
+            border-radius: 4px; 
+        }
+        input:focus { 
+            outline: none; 
+            border-color: #3399cc; 
+            box-shadow: 0 0 4px #99ccff; 
+        }
+        button { 
+            background: #3399cc; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            transition: 0.2s; 
+        }
+        button:hover { 
+            background: #267ba5; 
+        }
     </style>
 </head>
 <body>
